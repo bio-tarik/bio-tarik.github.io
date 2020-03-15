@@ -1,0 +1,62 @@
+{
+  "name": "bio-tarik.github.io",
+  "version": "0.0.1",
+  "description": "My personal portfolio",
+  "scripts": {
+    "build": "sapper build --legacy",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "deploy": "npm run export && node ./scripts/gh-pages.js",
+    "dev": "sapper dev",
+    "export": "sapper export --legacy && touch __sapper__/export/.nojekyll",
+    "start": "node __sapper__/build",
+    "test": "run-p --race dev cy:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bio-tarik/bio-tarik.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "html5",
+    "css3",
+    "tarik",
+    "bio-tarik",
+    "fullstack",
+    "web-developer"
+  ],
+  "author": "Tarik Bet Ayoub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bio-tarik/bio-tarik.github.io/issues"
+  },
+  "homepage": "https://github.com/bio-tarik/bio-tarik.github.io#readme",
+  "dependencies": {
+    "compression": "^1.7.1",
+    "polka": "^0.5.2",
+    "sirv": "^0.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-replace": "^2.2.0",
+    "date-fns": "^2.11.0",
+    "gh-pages": "^2.2.0",
+    "gray-matter": "^4.0.2",
+    "marked": "^0.8.0",
+    "npm-run-all": "^4.1.5",
+    "prismjs": "^1.19.0",
+    "reading-time": "^1.2.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-babel": "^4.0.2",
+    "rollup-plugin-svelte": "^5.0.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "sapper": "^0.27.0",
+    "svelte": "^3.19.0"
+  }
+}

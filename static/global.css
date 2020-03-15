@@ -1,0 +1,172 @@
+:root {
+  --main-color: #333333;
+  --secondary-color: #00ffb2;
+  --detail-color: #ffa500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+}
+
+.main-font {
+  font-family: "Roboto", sans-serif;
+}
+
+.bg-main-color {
+  background-color: var(--main-color);
+}
+
+.font-main-color {
+  color: var(--main-color);
+}
+
+.fill-main-color {
+  fill: var(--main-color);
+}
+
+.stroke-main-color {
+  stroke: var(--main-color);
+}
+
+.border-main-color {
+  border-color: var(--main-color);
+}
+
+.bg-secondary-color {
+  background-color: var(--secondary-color);
+}
+
+.font-secondary-color {
+  color: var(--secondary-color);
+}
+
+.fill-secondary-color {
+  fill: var(--secondary-color);
+}
+
+.stroke-secondary-color {
+  stroke: var(--secondary-color);
+}
+
+.bg-detail-color {
+  background-color: var(--detail-color);
+}
+
+.font-detail-color {
+  color: var(--detail-color);
+}
+
+.fill-detail-color {
+  fill: var(--detail-color);
+}
+
+.stroke-detail-color {
+  stroke: var(--detail-color);
+}
+
+body {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+section {
+  padding-left: 2%;
+  padding-right: 2%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+.wallOfText strong {
+  background-image: linear-gradient(
+    120deg,
+    var(--detail-color) 0%,
+    var(--detail-color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 80% 0.4em;
+  background-position: 80% 20%;
+  transition: background-size ease 0.3s;
+}
+
+.wallOfText strong:hover {
+  background-size: 100% 100%;
+}
+
+.form-input:focus {
+  border-color: var(--detail-color);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+
+input:-moz-placeholder,
+textarea::-webkit-input-placeholder {
+  /* Firefox 18- */
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+
+input::-moz-placeholder,
+textarea::-webkit-input-placeholder {
+  /* Firefox 19+ */
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+
+input:-ms-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* IE */
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+
+input::-ms-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* IE Edge */
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 90%;
+  }
+
+  #language {
+    margin-left: 20%;
+  }
+
+  section > div {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
