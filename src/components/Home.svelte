@@ -22,7 +22,7 @@
   }
 </style>
 
-<section class="{sectionId} bg-main-color font-secondary-color">
+<section id="{sectionId}" class="{sectionId} bg-main-color font-secondary-color">
   <div class="home">
     <span>
       {#each heading as text}

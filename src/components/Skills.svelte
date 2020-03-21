@@ -56,7 +56,7 @@
 </style>
 
 <section class="{sectionId} bg-secondary-color font-main-color">
-  <SectionTitle text={heading} />
+  <SectionTitle id="{sectionId}" text={heading} />
   <div class="graph-wrapper">
     <svg
       id="svgGraph"

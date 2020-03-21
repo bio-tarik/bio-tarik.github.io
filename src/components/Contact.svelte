@@ -50,7 +50,7 @@
 </style>
 
 <section class="{sectionId} bg-secondary-color">
-  <SectionTitle text={heading} />
+  <SectionTitle id="{sectionId}" text={heading} />
   <div id="logos">
     <!--Github-->
     <a href="https://github.com/bio-tarik">

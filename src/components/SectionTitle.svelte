@@ -1,5 +1,6 @@
 <script>
   export let text;
+  export let id;
 </script>
 
 <style>
@@ -12,4 +13,4 @@
   }
 </style>
 
-<h2 class="font-main-color">{text}</h2>
+<h2 id="{id}" class="font-main-color">{text}</h2>

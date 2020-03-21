@@ -22,7 +22,7 @@
 </style>
 
 <section class="{sectionId} bg-secondary-color font-main-color perfil">
-  <SectionTitle text={heading} />
+  <SectionTitle id="{sectionId}" text={heading} />
   <div class="profileText wallOfText">
     {#each paragraph as text, index}
       <p>

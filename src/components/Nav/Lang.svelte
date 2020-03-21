@@ -19,35 +19,25 @@
   .cursor-pointer {
     cursor: pointer;
   }
-
-  li {
-    display: inline;
-  }
 </style>
 
-<ul>
-  <li>
-    <button
-      class="font-secondary-color cursor-pointer main-font"
-      data-cy="switch-lang-button"
-      on:click={() => switchLang('pt')}>
-      PT
-    </button>
-  </li>
-  <li>
-    <button
-      class="font-secondary-color cursor-pointer main-font"
-      data-cy="switch-lang-button"
-      on:click={() => switchLang('en')}>
-      EN
-    </button>
-  </li>
-  <li>
-    <button
-      class="font-secondary-color cursor-pointer main-font"
-      data-cy="switch-lang-button"
-      on:click={() => switchLang('it')}>
-      IT
-    </button>
-  </li>
-</ul>
+<div>
+  <button
+    class="font-secondary-color cursor-pointer main-font"
+    data-cy="switch-lang-button"
+    on:click={() => switchLang('pt')}>
+    PT
+  </button>
+  <button
+    class="font-secondary-color cursor-pointer main-font"
+    data-cy="switch-lang-button"
+    on:click={() => switchLang('en')}>
+    EN
+  </button>
+  <button
+    class="font-secondary-color cursor-pointer main-font"
+    data-cy="switch-lang-button"
+    on:click={() => switchLang('it')}>
+    IT
+  </button>
+</div>

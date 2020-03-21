@@ -1,4 +1,6 @@
 <script>
+  import Lang from "./Lang.svelte";
+
   var openedMenu = false;
 
   function toggleMenu() {
@@ -9,19 +11,21 @@
 <style>
   li {
     display: none;
+    padding: 5px 10px;
   }
 
   .responsive li {
     float: none;
     display: block;
-    text-align: left;
+  }
+
+  .icon {
+    font-size: 4rem;
+    padding: 0px 10px;
   }
 
   a {
-    display: block;
-    padding: 14px 16px;
     text-decoration: none;
-    width: 100%;
   }
 
   @media (min-width: 801px) {
@@ -32,6 +36,10 @@
     li {
       display: inline-block;
     }
+
+    .language {
+      float: right;
+    }
   }
 </style>
 
@@ -39,22 +47,25 @@
   href="javascript:void(0);"
   class="icon font-secondary-color"
   on:click={toggleMenu}>
-  Menu
+  ☰
 </a>
 <ul class="menu-items" class:responsive={openedMenu}>
   <li>
     <a class="font-secondary-color" href="#home">Home</a>
   </li>
   <li>
-    <a class="font-secondary-color" href="#profile">Profile</a>
+    <a class="font-secondary-color" href="#perfil">Profile</a>
   </li>
   <li>
-    <a class="font-secondary-color" href="#home">Skills</a>
+    <a class="font-secondary-color" href="#competencias">Skills</a>
   </li>
   <li>
-    <a class="font-secondary-color" href="about">Contact</a>
+    <a class="font-secondary-color" href="#contato">Contact</a>
   </li>
   <li>
-    <a class="font-secondary-color" rel="prefetch" href="blog">blog</a>
+    <a class="font-secondary-color" rel="prefetch" href="Blog">Blog</a>
+  </li>
+  <li class="language">
+    <Lang />
   </li>
 </ul>
