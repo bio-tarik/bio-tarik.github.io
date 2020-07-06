@@ -62,9 +62,6 @@
   <li>
     <a class="font-secondary-color" href="#contato">Contact</a>
   </li>
-  <li>
-    <a class="font-secondary-color" rel="prefetch" href="blog">Blog</a>
-  </li>
   <li class="language">
     <Lang />
   </li>

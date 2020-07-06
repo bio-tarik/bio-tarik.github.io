@@ -1,7 +1,12 @@
 <script>
+  import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
   export let sectionId;
   export let heading;
   export let paragraph;
+  let show = false;
+
+  onMount(() => { show = true; })
 </script>
 
 <style>
@@ -22,13 +27,17 @@
   }
 </style>
 
-<section id="{sectionId}" class="{sectionId} bg-main-color font-secondary-color">
-  <div class="home">
-    <span>
-      {#each heading as text}
-        <h1 class="name fadeIn animated mainColor">{text}</h1>
-      {/each}
-    </span>
-    <p id="title" class="fadeIn animated">{paragraph}</p>
-  </div>
+<section id={sectionId} class="{sectionId} bg-main-color font-secondary-color">
+  {#if show}
+    <div class="home" transition:fade>
+      <div>
+        <span>
+          {#each heading as text}
+            <h1 class="name mainColor">{text}</h1>
+          {/each}
+        </span>
+        <p id="title" class="">{paragraph}</p>
+      </div>
+    </div>
+  {/if}
 </section>

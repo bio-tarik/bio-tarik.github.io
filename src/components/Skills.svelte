@@ -66,8 +66,8 @@
       <g transform="translate(3.173821,-221.29128)" id="layer1">
         <g id="text-group" class="fill-main-color main-font">
           <text id="text1426" y="225.7892" x="30.331917" style="">
-            <tspan style="" y="225.7892" x="30.331917" id="tspan1424">
-              nodeJs
+            <tspan style="" y="225.7892" x="32" id="tspan1424">
+              .NET
             </tspan>
           </text>
           <text style="" x="56.734222" y="233.99133" id="text1430">
@@ -77,7 +77,7 @@
           </text>
           <text id="text1438" y="251.66713" x="67.394913" style="">
             <tspan id="tspan1440" style="" y="251.66713" x="67.394913">
-              mongoDb
+              SQL
             </tspan>
           </text>
           <text id="text1446" y="273.3764" x="64.183899" style="">
@@ -87,7 +87,7 @@
           </text>
           <text id="text1450" y="290.80118" x="44.261005" style="">
             <tspan style="" y="290.80118" x="44.261005" id="tspan1448">
-              swarm
+              AWS
             </tspan>
           </text>
           <text id="text1454" y="290.80118" x="18.445232" style="">
