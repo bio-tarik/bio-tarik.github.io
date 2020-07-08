@@ -1,0 +1,50 @@
+:root {
+  --main-color: #333333;
+  --secondary-color: #00ffb2;
+  --detail-color: #ffa500;
+  --main-font: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  font-family: var(--main-font);
+}
+
+section {
+  padding-left: 2%;
+  padding-right: 2%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+/*TODO: move it to the component*/
+.wallOfText strong {
+  background-image: linear-gradient(
+    120deg,
+    var(--detail-color) 0%,
+    var(--detail-color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 80% 0.4em;
+  background-position: 80% 20%;
+  transition: background-size ease 0.3s;
+}
+
+.wallOfText strong:hover {
+  background-size: 100% 100%;
+}

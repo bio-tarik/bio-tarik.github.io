@@ -1,10 +1,15 @@
 <script>
   export let sectionId;
   export let heading;
-  import SectionTitle from "../components/SectionTitle.svelte";
+  import SectionTitle from "./SectionTitle.svelte";
 </script>
 
 <style>
+  .skills {
+    color: var(--main-color);
+    background-color: var(--secondary-color);
+  }
+
   .graph-wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -53,10 +58,38 @@
   #pathsGroup {
     stroke: rgba(51, 51, 51, 0.5);
   }
+
+  .fill-main-color {
+    fill: var(--main-color);
+  }
+
+  .stroke-main-color {
+    stroke: var(--main-color);
+  }
+
+  .fill-secondary-color {
+    fill: var(--secondary-color);
+  }
+
+  .stroke-secondary-color {
+    stroke: var(--secondary-color);
+  }
+
+  .fill-detail-color {
+    fill: var(--detail-color);
+  }
+
+  .stroke-detail-color {
+    stroke: var(--detail-color);
+  }
+
+  .main-font {
+    font-family: var(--main-font);
+  }
 </style>
 
-<section class="{sectionId} bg-secondary-color font-main-color">
-  <SectionTitle id="{sectionId}" text={heading} />
+<section class="{sectionId} skills">
+  <SectionTitle id={sectionId} text={heading} />
   <div class="graph-wrapper">
     <svg
       id="svgGraph"
@@ -66,9 +99,7 @@
       <g transform="translate(3.173821,-221.29128)" id="layer1">
         <g id="text-group" class="fill-main-color main-font">
           <text id="text1426" y="225.7892" x="30.331917" style="">
-            <tspan style="" y="225.7892" x="32" id="tspan1424">
-              .NET
-            </tspan>
+            <tspan style="" y="225.7892" x="32" id="tspan1424">.NET</tspan>
           </text>
           <text style="" x="56.734222" y="233.99133" id="text1430">
             <tspan id="tspan1432" x="56.734222" y="233.99133" style="">

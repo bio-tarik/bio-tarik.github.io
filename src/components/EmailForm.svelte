@@ -6,6 +6,9 @@
   export let okMessage;
   export let errorMessage;
 
+  let hasError = false;
+  let emailSent = false;
+
   async function handleSubmit(event) {
     if (event.target.id === "contactform") {
       sendMail(event.target);
@@ -17,14 +20,9 @@
     var req = new XMLHttpRequest();
     req.open("POST", `https://formcarry.com/s/ZVdAIg81Lst`, true);
     req.setRequestHeader("Accept", "application/json");
-    req.onload = () => mailResult("okMessage");
-    req.onerror = () => mailResult("errorMessage");
+    req.onload = () => (emailSent = true);
+    req.onerror = () => (hasError = true);
     req.send(data);
-  };
-
-  const mailResult = id => {
-    document.querySelector(`#${id}`).classList.add("visible");
-    document.querySelector("#contact-button").classList.add("hidden");
   };
 </script>
 
@@ -56,6 +54,12 @@
     box-shadow: none;
     border-radius: 0%;
     padding: 0;
+    border-color: var(--main-color);
+    font-family: var(--main-font);
+  }
+
+  .form-input:focus {
+    border-color: var(--detail-color);
   }
 
   textarea {
@@ -68,49 +72,16 @@
     background-color: transparent;
     font-size: 1.8rem;
     cursor: pointer;
+    border-color: var(--main-color);
+    color: var(--main-color);
   }
 
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-animation: autofill 0s forwards;
-    animation: autofill 0s forwards;
+  input::placeholder, textarea::placeholder {
+    color: var(--main-color);
+    font-size: 1.8rem;
   }
 
   @media (min-width: 992px) {
-    .form-button {
-      font-size: 1.3rem;
-    }
-    input::-webkit-input-placeholder,
-    textarea::-webkit-input-placeholder {
-      /* Chrome/Opera/Safari */
-      font-size: 1.4rem;
-    }
-
-    input:-moz-placeholder,
-    textarea::-webkit-input-placeholder {
-      /* Firefox 18- */
-      font-size: 1.4rem;
-    }
-
-    input::-moz-placeholder,
-    textarea::-webkit-input-placeholder {
-      /* Firefox 19+ */
-      font-size: 1.4rem;
-    }
-
-    input:-ms-input-placeholder,
-    textarea::-webkit-input-placeholder {
-      /* IE */
-      font-size: 1.4rem;
-    }
-
-    input::-ms-input-placeholder,
-    textarea::-webkit-input-placeholder {
-      /* IE Edge */
-      font-size: 1.4rem;
-    }
   }
 </style>
 
@@ -118,11 +89,16 @@
   <!-- Prevent implicit submission of the form -->
   <button type="submit" disabled style="display: none" aria-hidden="true" />
 
-  <p class="validationMessage hidden" id="okMessage">{okMessage}</p>
-  <p class="validationMessage hidden" id="errorMessage">{errorMessage}</p>
+  {#if emailSent}
+    <p class="validationMessage" id="okMessage">{okMessage}</p>
+  {/if}
+
+  {#if hasError}
+    <p class="validationMessage" id="errorMessage">{errorMessage}</p>
+  {/if}
 
   <input
-    class="form-input border-main-color"
+    class="form-input"
     type="text"
     name="name"
     placeholder={nameLabel}
@@ -130,23 +106,20 @@
     aria-label={nameLabel} />
   <input
     type="email"
-    class="form-input border-main-color"
+    class="form-input"
     name="email"
     placeholder={emailLabel}
     required
     aria-label={emailLabel} />
   <textarea
     name="message"
-    class="form-input main-font border-main-color"
+    class="form-input"
     placeholder="{messageLabel}..."
     required
     aria-label={messageLabel} />
   <input type="text" name="_gotcha" style="display:none" />
 
-  <button
-    class="form-button border-main-color font-main-color"
-    id="contact-button"
-    type="submit">
+  <button class="form-button" id="contact-button" type="submit">
     {sendButton}
   </button>
 </form>

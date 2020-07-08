@@ -26,6 +26,7 @@
 
   a {
     text-decoration: none;
+    color: var(--secondary-color);
   }
 
   @media (min-width: 801px) {
@@ -45,22 +46,22 @@
 
 <a
   href="javascript:void(0);"
-  class="icon font-secondary-color"
+  class="icon"
   on:click={toggleMenu}>
   ☰
 </a>
 <ul class="menu-items" class:responsive={openedMenu}>
   <li>
-    <a class="font-secondary-color" href="#home">Home</a>
+    <a href="#home">Home</a>
   </li>
   <li>
-    <a class="font-secondary-color" href="#perfil">Profile</a>
+    <a href="#perfil">Profile</a>
   </li>
   <li>
-    <a class="font-secondary-color" href="#competencias">Skills</a>
+    <a href="#competencias">Skills</a>
   </li>
   <li>
-    <a class="font-secondary-color" href="#contato">Contact</a>
+    <a href="#contato">Contact</a>
   </li>
   <li class="language">
     <Lang />

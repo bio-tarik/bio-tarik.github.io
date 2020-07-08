@@ -7,14 +7,15 @@
   export let sendButton;
   export let okMessage;
   export let errorMessage;
-  import SectionTitle from "../components/SectionTitle.svelte";
-  import EmailForm from "../components/EmailForm.svelte";
+  import SectionTitle from "./SectionTitle.svelte";
+  import EmailForm from "./EmailForm.svelte";
 </script>
 
 <style>
   .contato {
+    color: var(--main-color);
+    background-color: var(--secondary-color);
     padding-bottom: 5%;
-    justify-content: space-between;
   }
 
   #logos {
@@ -26,6 +27,7 @@
   .external-logo {
     width: 3rem;
     height: 3rem;
+    fill: var(--main-color);
   }
 
   @keyframes autofill {
@@ -49,7 +51,7 @@
   }
 </style>
 
-<section class="{sectionId} bg-secondary-color">
+<section class="{sectionId}">
   <SectionTitle id="{sectionId}" text={heading} />
   <div id="logos">
     <!--Github-->

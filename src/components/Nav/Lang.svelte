@@ -10,10 +10,12 @@
 <style>
   button {
     font-weight: lighter;
-    margin: 5px;
+    margin: 0px 5px;
     font-size: 3rem;
     background-color: transparent;
     border: none;
+    color: var(--secondary-color);
+    font-family: var(--main-font);
   }
 
   .cursor-pointer {
@@ -23,19 +25,19 @@
 
 <div>
   <button
-    class="font-secondary-color cursor-pointer main-font"
+    class="cursor-pointer"
     data-cy="switch-lang-button"
     on:click={() => switchLang('pt')}>
     PT
   </button>
   <button
-    class="font-secondary-color cursor-pointer main-font"
+    class="cursor-pointer"
     data-cy="switch-lang-button"
     on:click={() => switchLang('en')}>
     EN
   </button>
   <button
-    class="font-secondary-color cursor-pointer main-font"
+    class="cursor-pointer"
     data-cy="switch-lang-button"
     on:click={() => switchLang('it')}>
     IT

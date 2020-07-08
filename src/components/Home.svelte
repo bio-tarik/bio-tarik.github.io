@@ -1,24 +1,23 @@
 <script>
   import { fade } from "svelte/transition";
-  import { onMount } from "svelte";
-  export let sectionId;
+
   export let heading;
   export let paragraph;
-  let show = false;
-
-  onMount(() => { show = true; })
+  export let sectionId;
 </script>
 
 <style>
   .home {
-    text-align: right;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
     justify-content: flex-end;
+    text-align: right;
   }
 
   h1 {
     font-size: 10rem;
-    line-height: 90%;
     font-weight: lighter;
+    line-height: 90%;
   }
 
   p,
@@ -28,16 +27,12 @@
 </style>
 
 <section id={sectionId} class="{sectionId} bg-main-color font-secondary-color">
-  {#if show}
-    <div class="home" transition:fade>
-      <div>
-        <span>
-          {#each heading as text}
-            <h1 class="name mainColor">{text}</h1>
-          {/each}
-        </span>
-        <p id="title" class="">{paragraph}</p>
-      </div>
-    </div>
-  {/if}
+  <div class="home">
+    <span>
+      {#each heading as text, i}
+        <h1 class="name mainColor" transition:fade="{{ duration: 500, delay: 500 * (i) }}">{text}</h1>
+      {/each}
+    </span>
+    <p id="title" class="" transition:fade="{{ duration: 500, delay: 1000 }}">{paragraph}</p>
+  </div>
 </section>

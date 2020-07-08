@@ -4,6 +4,7 @@
 
 <style>
   nav {
+    background-color: var(--main-color);
     position: fixed;
     overflow: hidden;
     text-align: left;
@@ -13,6 +14,6 @@
   }
 </style>
 
-<nav class="bg-main-color">
+<nav>
   <Menu />
 </nav>
