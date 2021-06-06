@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: bio-tarik.github.io
-Token: af80618e2cb28e20f76efe9b44aedad314f00047050e84ff98ca779113fe933f
